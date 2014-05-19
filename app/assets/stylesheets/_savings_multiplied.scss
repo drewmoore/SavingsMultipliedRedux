@@ -1,4 +1,7 @@
-header, footer {
+body {
+  background-color: #75cbd2;
+}
+.row, header, footer, .home-bottom-column {
   ul {
     li {
       display: inline;
@@ -6,9 +9,76 @@ header, footer {
   }
 }
 
-#content {
+span {
+  display: inline-block;
+  img {
+    display: inline;
+  }
+  h3 {
+    display: inline;
+  }
+}
+
+.row {
+  margin: 0px 0px;
+  border: 1px dotted black;
+}
+
+#devise_navigation {
+  float: right;
+}
+
+#main_navigation_row {
+  background-color: #f5cbd3;
+}
+
+#main_navigation {
+  text-align: center;
+  margin: 6px auto;
+  li {
+    form {
+      display: inline;
+    }
+  }
+}
+
+.auction_search_search_term {
+  display: inline-block;
+  width: 128px;
+  height: 32px;
+  label {
+    display: none;
+  }
+  input {
+    width: 128px;
+    height: 32px;
+    border: none;
+    border-radius: 20px;
+    background: asset-data-url('search_bar.gif') no-repeat;
+    background-size: 100% 100%;
+    padding: 0px 0px 0px 36px;
+  }
+}
+
+.interior {
+  @include grid-row();
+}
+
+.interior:nth-child(2) {
+  margin: 80px auto 0px auto;
+}
+
+.top {
+  background-color: #d5f1f0;
+}
+
+
+#content, header {
   @include grid-row();
 
+  background-color: #ffffff;
+
+  $full-column-size: 12;
   $left-column-size: 6;
   $right-column-size: 12 - $left-column-size;
   .left-column {
@@ -16,6 +86,16 @@ header, footer {
   }
   .right-column {
     @include grid-column($right-column-size);
+  }
+  .home-top-row {
+    @include grid-row(12);
+    margin: 0px;
+  }
+  .home-bottom-row {
+    @include grid-row(12);
+  }
+  .home-bottom-column {
+    @include grid-column($full-column-size);
   }
 }
 
