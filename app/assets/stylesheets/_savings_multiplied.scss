@@ -39,6 +39,7 @@ header {
   #page_navigation {
     text-align: center;
     position: relative;
+    margin: 30px auto 0px auto;
     bottom: -15px;
     li {
       margin: 5px 5px 20px 5px;
@@ -66,10 +67,6 @@ header {
   }
   h2 {
     color: #75cbd2;
-  }
-  .right-column {
-    position: relative;
-    bottom: -40px;
   }
 }
 
