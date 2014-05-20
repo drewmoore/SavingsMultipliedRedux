@@ -1,11 +1,84 @@
+@font-face {
+  font-family: "Corben-Bold";
+  src: font-url("Corben-Bold.ttf");
+}
+@font-face {
+  font-family: "Corben-Regular";
+  src: font-url("Corben-Regular.ttf");
+}
+
+h2 {
+  font-family: "Corben-Bold";
+  font-size: 1em;
+}
+h3 {
+  font-size: 1em;
+}
+p {
+  font-size: .9em;
+}
+
 body {
   background-color: #75cbd2;
 }
+
 .row, header, footer, .home-bottom-column {
   ul {
     li {
       display: inline;
     }
+  }
+}
+
+header {
+  border-radius: 40px 40px 0px 0px;
+  #logo {
+    position: relative;
+    bottom: 20px;
+  }
+  #page_navigation {
+    text-align: center;
+    position: relative;
+    bottom: -15px;
+    li {
+      margin: 5px 5px 20px 5px;
+      border-radius: 20px;
+      width: 100px;
+      height: 25px;
+      display: inline-block;
+      text-align: center;
+      a {
+        color: #fdeff7;
+      }
+    }
+    li:nth-child(1) {
+      background-color: #75cbd1;
+    }
+    li:nth-child(2) {
+      background-color: #8cb82c;
+    }
+    li:nth-child(3) {
+      background-color: #702c8e;
+    }
+    li:nth-child(4) {
+      background-color: #ec008c;
+    }
+  }
+  h2 {
+    color: #75cbd2;
+  }
+  .right-column {
+    position: relative;
+    bottom: -40px;
+  }
+}
+
+footer {
+  margin: 20px auto 0px auto;
+  text-align: center;
+  a {
+    color: #d5f1f0;
+    font-size: .9em;
   }
 }
 
@@ -21,42 +94,52 @@ span {
 
 .row {
   margin: 0px 0px;
-  border: 1px dotted black;
 }
 
 #devise_navigation {
   float: right;
+  position: relative;
+  bottom: -15px;
+  right: 30px;
+  a {
+    font-size: .9em;
+  }
 }
+
 
 #main_navigation_row {
   background-color: #f5cbd3;
-}
-
-#main_navigation {
-  text-align: center;
-  margin: 6px auto;
-  li {
-    form {
-      display: inline;
+  #main_navigation {
+    text-align: center;
+    margin: 0px auto;
+    li {
+      margin: 0px 2.5% 0px 2.5%;
+      form {
+        display: inline;
+      }
+      a {
+        color: #6f1549;
+        font-family: "Corben-Bold";
+      }
     }
-  }
-}
-
-.auction_search_search_term {
-  display: inline-block;
-  width: 128px;
-  height: 32px;
-  label {
-    display: none;
-  }
-  input {
-    width: 128px;
-    height: 32px;
-    border: none;
-    border-radius: 20px;
-    background: asset-data-url('search_bar.gif') no-repeat;
-    background-size: 100% 100%;
-    padding: 0px 0px 0px 36px;
+    .auction_search_search_term {
+      display: inline-block;
+      width: 128px;
+      height: 32px;
+      label {
+        display: none;
+      }
+      input {
+        width: 128px;
+        height: 32px;
+        border: none;
+        border-radius: 20px;
+        background: asset-data-url('search_bar.gif') no-repeat;
+        background-size: 100% 100%;
+        background-position: center;
+        padding: 0px 0px 0px 36px;
+      }
+    }
   }
 }
 
@@ -65,7 +148,7 @@ span {
 }
 
 .interior:nth-child(2) {
-  margin: 80px auto 0px auto;
+  margin: 0px auto 0px auto;
 }
 
 .top {
@@ -90,14 +173,71 @@ span {
   .home-top-row {
     @include grid-row(12);
     margin: 0px;
+    h2 {
+      color: #8cb82c;
+      margin: 40px 0px 10px 0px;
+    }
+    h3 {
+      color: #45abb3;
+    }
+    #owl-row {
+      margin: 20px auto 20px auto;
+    }
+    #shop-now-row {
+      background: asset-data-url("homepage/dotted_line_44_36.png") repeat;
+      background-position: center;
+    }
+    .button {
+      display: inline;
+      border-radius: 30px;
+      padding: 6px;
+      background-color: #ec008c;
+      border: 0px;
+      position: relative;
+      right: -60%;
+    }
+    p {
+      color: #5b7e0e;
+    }
+    #mission-statement {
+      margin: 20px auto 20px auto;
+    }
+    #tree-row {
+      img {
+        display: inline;
+      }
+      h2 {
+        color: #5b7e0e;
+      }
+      #tree-span {
+        float: right;
+      }
+    }
+  }
+  #child_images {
+    text-align: center;
+    img:nth-child(2) {
+      margin: 10px auto 10px auto;
+    }
   }
   .home-bottom-row {
     @include grid-row(12);
-  }
-  .home-bottom-column {
-    @include grid-column($full-column-size);
+    .home-bottom-column {
+      @include grid-column($full-column-size);
+      text-align: center;
+      #callout_images {
+        li {
+          margin: 0px 20px 0px 20px;
+        }
+      }
+    }
   }
 }
+
+#content {
+  border-radius: 0px 0px 80px 80px;
+}
+
 
 $small-range: (0em, 30em); /* 0, 640px */
 $small-only: "#{$screen} and (max-width: 40em)" !default;

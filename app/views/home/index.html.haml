@@ -2,12 +2,23 @@
   .left-column
     %h2 We're making one aspect of life easier for parents of multiples:
 
-    %span
-      = image_tag "homepage/owl_44_44.png"
-      %h3 buying and selling gently used sets of clothes!
+    .row.interior#owl-row
+      %span
+        = image_tag "homepage/owl_44_44.png"
+        %h3 buying and selling gently used sets of clothes!
 
-    = link_to "Shop Now!", auctions_path, class: "button primary"
-    = image_tag "homepage/tree.png"
+    .row.interior#shop-now-row
+      = link_to "Shop Now!", auctions_path, class: "button primary"
+
+    %p#mission-statement
+      Our goal is to take on the hassle of cosigning your clothes. We help you trade with parents of other multiples.
+
+    .row.interior#tree-row
+      %span
+        %h2 Welcome to Savings Multiplied,
+        %p your new online source for all things Multiples.
+      %span#tree-span
+        = image_tag "homepage/tree.png"
 
   .right-column
     #child_images
