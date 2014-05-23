@@ -22,7 +22,7 @@ body {
   background-color: #75cbd2;
 }
 
-.row, header, footer, .home-bottom-column {
+.row, header, footer, .home-bottom-column, .right-column-2-3rds {
   ul {
     li {
       display: inline;
@@ -152,20 +152,26 @@ span {
   background-color: #d5f1f0;
 }
 
-
 #content, header {
   @include grid-row();
-
   background-color: #ffffff;
 
   $full-column-size: 12;
   $left-column-size: 6;
+  $one-3rd-column-size: $full-column-size / 3;
+  $two-3rds-column-size: 2 * $one-3rd-column-size;
   $right-column-size: 12 - $left-column-size;
   .left-column {
     @include grid-column($left-column-size);
   }
   .right-column {
     @include grid-column($right-column-size);
+  }
+  .left-column-1-3rd {
+    @include grid-column($one-3rd-column-size);
+  }
+  .right-column-2-3rds {
+    @include grid-column($two-3rds-column-size);
   }
   .home-top-row {
     @include grid-row(12);
@@ -229,12 +235,59 @@ span {
       }
     }
   }
+
+  .child_icons {
+    display: inline-block;
+  }
+  input[type="submit"] {
+    border-radius: 20px;
+    background-color: #8cb82c;
+    display: inline;
+  }
+
+  #auction_search_sidebar{
+    padding: 20px;
+    margin: 20px auto 0px auto;
+    border-radius: 40px;
+    background-color: #edfad1;
+    li {
+      display: inline;
+    }
+    a, h2, {
+      color: #5b7e0e;
+    }
+
+    .auction_search_search_term {
+      label {
+        display: none;
+      }
+      #auction_search_search_term {
+        display: inline;
+      }
+    }
+  }
+  .auction, .breadcrumb_navigation {
+    a {
+      color: #5b7e0e;
+    }
+  }
+  select {
+    background-color: rgba(0, 0, 0, .0);
+    border: none;
+    width: 70%;
+    display: inline;
+  }
+  .auction_search_sort_by {
+    display: inline-block;
+  }
+
 }
+
+
 
 #content {
   border-radius: 0px 0px 80px 80px;
 }
-
 
 $small-range: (0em, 30em); /* 0, 640px */
 $small-only: "#{$screen} and (max-width: 40em)" !default;

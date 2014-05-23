@@ -15,4 +15,21 @@
 //= require foundation
 //= require turbolinks
 
-$(function(){ $(document).foundation(); });
+$(function(){
+  $(document).foundation();
+
+  if ($('.breadcrumb_navigation')) {
+    breadCrumbNavigator();
+  }
+
+  function breadCrumbNavigator(){
+    var crumbs = $('.breadcrumb_navigation > li > a');
+    if (crumbs.length > 1) {
+      for(var i = 0; i < crumbs.length; i++) {
+        if (i < crumbs.length - 1){
+          $(crumbs[i]).text(crumbs[i].text += " > ");
+        }
+      }
+    }
+  }
+});

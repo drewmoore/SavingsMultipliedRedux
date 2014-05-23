@@ -24,4 +24,4 @@
       = f.input :clothing_size_ids, as: :check_boxes, collection: ClothingSize.all
       = f.input :clothing_type_ids, as: :check_boxes, collection: ClothingType.all
       = f.input :season_ids, as: :check_boxes, collection: Season.all
-    = f.submit "Search"
+    = f.submit "Search", { class: ".search_submit"}
