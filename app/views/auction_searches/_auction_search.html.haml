@@ -17,6 +17,7 @@
     %h2 Limit your search:
     %hr
     = f.input :search_term
+    = f.submit "Search", { class: ".search_submit"}
     - unless auction_search.needs_child_genders?
       = f.input :child_configuration_id, as: :hidden
       = f.input :clothing_condition_id, collection: ClothingCondition.all
@@ -24,4 +25,3 @@
       = f.input :clothing_size_ids, as: :check_boxes, collection: ClothingSize.all
       = f.input :clothing_type_ids, as: :check_boxes, collection: ClothingType.all
       = f.input :season_ids, as: :check_boxes, collection: Season.all
-    = f.submit "Search", { class: ".search_submit"}

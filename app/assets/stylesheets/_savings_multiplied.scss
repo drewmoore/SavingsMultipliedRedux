@@ -1,3 +1,4 @@
+$font-green: #5b7e0e;
 @font-face {
   font-family: "Corben-Bold";
   src: font-url("Corben-Bold.ttf");
@@ -156,6 +157,13 @@ span {
   @include grid-row();
   background-color: #ffffff;
 
+  input[type="submit"] {
+    border-radius: 20px;
+    background-color: #8cb82c;
+    display: inline;
+    color: #ffffff;
+  }
+
   $full-column-size: 12;
   $left-column-size: 6;
   $one-3rd-column-size: $full-column-size / 3;
@@ -239,11 +247,6 @@ span {
   .child_icons {
     display: inline-block;
   }
-  input[type="submit"] {
-    border-radius: 20px;
-    background-color: #8cb82c;
-    display: inline;
-  }
 
   #auction_search_sidebar{
     padding: 20px;
@@ -253,10 +256,63 @@ span {
     li {
       display: inline;
     }
-    a, h2, {
-      color: #5b7e0e;
+    a, h2, label, select {
+      color: $font-green;
     }
-
+    .auction_search_search_term {
+      display: inline-block;
+      width: 75%;
+    }
+    select {
+      background-color: rgba(0, 0, 0, .0);
+      background: asset-data-url("down_arrow.png") no-repeat right;
+      background-size: contain;
+      border: none;
+      display: inline;
+      width: 45%;
+      height: 30px;
+      margin: 0px 0px 0px 10px;
+      color: $font-green;
+      -webkit-appearance: none;
+      option:focus {
+        outline: 0;
+      }
+    }
+    select:focus {
+      outline: 0;
+    }
+    label {
+      color: $font-green;
+      display: inline;
+      margin: 0px 6px 0px 0px;
+    }
+    input[type=submit] {
+      display: inline;
+    }
+    .check_boxes {
+      margin: 0px 0px 20px 0px;
+      label {
+        display: block;
+        margin: 0px 0px 10px 0px;
+      }
+      input[type=checkbox] {
+        margin: 0px 3px 5px 3px;
+        display: inline;
+      }
+      span.checkbox:not(.custom) {
+        margin: 0px 5px 0px 5px;
+        min-width: 45%;
+      }
+      //span:nth-of-type(even) {
+      //  margin: 0px 5px 0px 5px;
+      //  border: 1px dotted pink;
+      //}
+    }
+    .checkbox {
+      input, label {
+        display: inline;
+      }
+    }
     .auction_search_search_term {
       label {
         display: none;
@@ -268,17 +324,37 @@ span {
   }
   .auction, .breadcrumb_navigation {
     a {
-      color: #5b7e0e;
+      color: $font-green;
     }
-  }
-  select {
-    background-color: rgba(0, 0, 0, .0);
-    border: none;
-    width: 70%;
-    display: inline;
   }
   .auction_search_sort_by {
     display: inline-block;
+    width: 50%;
+    .new_auction_search {
+      width: 50%;
+    }
+    label {
+      color: $font-green;
+      display: inline;
+      margin: 0px 6px 0px 0px;
+    }
+    select {
+      background-color: rgba(0, 0, 0, .0);
+      background: asset-data-url("down_arrow.png") no-repeat right;
+      background-size: contain;
+      border: none;
+      display: inline;
+      width: 50%;
+      height: 30px;
+      color: $font-green;
+      -webkit-appearance: none;
+      option:focus {
+        outline: 0;
+      }
+    }
+    select:focus {
+      outline: 0;
+    }
   }
 
 }
