@@ -157,6 +157,10 @@ span {
   @include grid-row();
   background-color: #ffffff;
 
+  .notice {
+    margin: 10px auto 0px auto;
+    color: $font-green;
+  }
   input[type="submit"] {
     border-radius: 20px;
     background-color: #8cb82c;
@@ -326,10 +330,17 @@ span {
     a {
       color: $font-green;
     }
+    .large_gender {
+      height: 30px;
+    }
+  }
+  .auction {
+    display: inline-block;
+    width: 20%;
   }
   .auction_search_sort_by {
     display: inline-block;
-    width: 50%;
+    width: 30%;
     .new_auction_search {
       width: 50%;
     }
@@ -346,6 +357,7 @@ span {
       display: inline;
       width: 50%;
       height: 30px;
+      margin: 0px 0px 0px 10px;
       color: $font-green;
       -webkit-appearance: none;
       option:focus {
