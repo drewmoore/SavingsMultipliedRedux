@@ -1,4 +1,23 @@
 .auction
   = link_to auction do
-    %img.item_photo= image_tag auction.item_photo
-    %span.title= auction.title
+    -if auction.item_photo
+      %img.item_photo= image_tag auction.item_photo
+    -if auction.title
+      %span.title= auction.title
+    -if auction.starting_price
+      %span.starting_price= number_to_currency(auction.starting_price)
+    -if auction.user_id
+      -user = User.find(auction.user_id)
+      %span.user_name= user.first_name + " " + user.last_name
+    -if auction.ends_at
+      -diff = auction.ends_at - Time.now
+      -minutes = diff / 60
+      -hours = minutes / 60
+      -days = hours / 24
+      -if days < 1
+        -if hours < 1
+          %span.time_left= minutes.to_i + " minutes"
+        -else
+          %span.time_left= hours.to_i + " hours"
+      -if days > 1
+        %span.time_left= days.to_i.to_s + " days"
