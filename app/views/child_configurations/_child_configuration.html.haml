@@ -7,11 +7,11 @@
 .child_icons{ class: child_configuration.genders }
   - child_configuration.genders.chars.collect do |gender|
     %span{ class: gender }
-    - image_name = (gender == "f")? f_images.sample : m_images.sample
-    = image_tag image_name, class: ((small) ? "small_gender" : "large_gender"), alt: gender
+      - image_name = (gender == "f")? f_images.sample : m_images.sample
+      = image_tag image_name, class: ((small) ? "small_gender" : "large_gender"), alt: gender
     %span.gender
       - if gender == 'f'
-        girl
+        Girl
       - elsif gender == 'm'
-        boy
+        Boy
 

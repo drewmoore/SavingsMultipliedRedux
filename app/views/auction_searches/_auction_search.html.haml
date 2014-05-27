@@ -5,7 +5,7 @@
       %h2 I'm shopping for:
       %ul.children-list
         - auction_search.possible_child_configurations.collect(&:siblings_type).uniq.each do |siblings_type|
-          %li.children
+          %li.children.green-owl
             = link_to siblings_type.capitalize, auctions_path(auction_search.to_hash(siblings_type: siblings_type))
     - elsif auction_search.needs_child_genders?
       %h2 I'm shopping for:
