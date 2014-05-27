@@ -1,7 +1,7 @@
 .auction
   = link_to auction do
     -if auction.item_photo
-      %img.item_photo= image_tag auction.item_photo
+      %img.item_photo(src="#{auction.item_photo}")
     -if auction.title
       %span.title= auction.title
     -if auction.starting_price

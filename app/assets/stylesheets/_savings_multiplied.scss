@@ -10,7 +10,8 @@ $font-green: #5b7e0e;
 
 h2 {
   font-family: "Corben-Bold";
-  font-size: 1em;
+  font-size: .95em;
+  text-align: center;
 }
 h3 {
   font-size: 1em;
@@ -43,7 +44,7 @@ header {
     margin: 30px auto 0px auto;
     bottom: -15px;
     li {
-      margin: 5px 5px 20px 5px;
+      margin: 2px 2px 20px 2px;
       border-radius: 20px;
       width: 100px;
       height: 25px;
@@ -156,6 +157,7 @@ span {
 #content, header {
   @include grid-row();
   background-color: #ffffff;
+  padding: 20px;
 
   .notice {
     margin: 10px auto 0px auto;
@@ -253,8 +255,8 @@ span {
   }
 
   #auction_search_sidebar{
-    padding: 20px;
-    margin: 20px auto 0px auto;
+    padding: 10px;
+    margin: 0px auto 0px auto;
     border-radius: 40px;
     background-color: #edfad1;
     li {
@@ -293,6 +295,23 @@ span {
     input[type=submit] {
       display: inline;
     }
+    .children-list {
+      width: 100%;
+      text-align: center;
+      li {
+        display: inline-block;
+        text-align: center;
+        width: 40%;
+        background: asset-data-url("owls/owl_green_32.png") no-repeat left;
+        background-size: contain;
+        padding: 0px 0px 0px 26px;
+        margin: 2px auto 2px auto;
+        font-size: 80%;
+        a {
+          font-size: 90%;
+        }
+      }
+    }
     .check_boxes {
       margin: 0px 0px 20px 0px;
       label {
@@ -307,10 +326,6 @@ span {
         margin: 0px 5px 0px 5px;
         min-width: 45%;
       }
-      //span:nth-of-type(even) {
-      //  margin: 0px 5px 0px 5px;
-      //  border: 1px dotted pink;
-      //}
     }
     .checkbox {
       input, label {
@@ -327,6 +342,7 @@ span {
     }
   }
   .auction, .breadcrumb_navigation {
+    vertical-align: top;
     a {
       color: $font-green;
     }
@@ -336,7 +352,17 @@ span {
   }
   .auction {
     display: inline-block;
-    width: 20%;
+    max-width: 20%;
+    font-size: 80%;
+    margin: 2% 2% 2% 2%;
+    text-align: center;
+    img {
+      max-width: 90%;
+      max-height: 50%;
+    }
+    span {
+      margin: 2%;
+    }
   }
   .auction_search_sort_by {
     display: inline-block;
@@ -378,7 +404,7 @@ span {
 }
 
 $small-range: (0em, 30em); /* 0, 640px */
-$small-only: "#{$screen} and (max-width: 40em)" !default;
+$small-only: "#{$screen} and (max-width: 40em) and (height: 22em)" !default;
 
 @media #{$small-only} {
   #content {
