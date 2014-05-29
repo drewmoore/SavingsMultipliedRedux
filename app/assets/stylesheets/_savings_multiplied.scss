@@ -300,18 +300,28 @@ span {
       width: 100%;
       text-align: center;
       li {
-        display: inline-block;
+        display: inline;
         text-align: center;
         width: 40%;
-        padding: 0px 0px 0px 26px;
-        margin: 2px auto 2px auto;
         font-size: 80%;
-        border: 1px dotted pink;
+        .child_icons {
+          margin: 8% auto 8% auto;
+          min-width: 90%;
+          max-height: 100%;
+          img {
+            max-width: 60%;
+            //height: auto;
+            max-height: 8%;
+          }
+        }
         a {
           font-size: 90%;
         }
       }
       li.green-owl {
+        margin: 2px auto 2px auto;
+        display: inline-block;
+        padding: 0px 0px 0px 26px;
         background: asset-data-url("owls/owl_green_32.png") no-repeat left;
         background-size: contain;
       }
